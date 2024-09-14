@@ -11,9 +11,14 @@ const urlSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        vistHistory :[{timestamp:{type: Number}}]// default: Date.now, can be used to get the current timestamp 
+        createdBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "users",
+          },
+        vistHistory :[{timestamp:{type: Number}}],// default: Date.now, can be used to get the current timestamp 
+        
     },{timestamps: true}
 );
-const Url = mongoose.model('Url', urlSchema);
+const Url = mongoose.model('url', urlSchema);
 
 module.exports = Url;

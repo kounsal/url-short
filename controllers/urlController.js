@@ -7,10 +7,14 @@ const body = req.body;
     return res.status(400).json({ error: 'URL is required' });
   }
   const shortId = shortid(8);
+  const cid = req.user._id;
+  console.log(req.user._id);
   await Url.create({
     shortID: shortId,
     redirectUrl: body.url,
+    createdBy :req.user._id,
     vistHistory: [], 
+    
 });
   res.json({ id : shortId , body: body.url });
 };
