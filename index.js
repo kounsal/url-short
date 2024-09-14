@@ -4,7 +4,7 @@ const port = 3000
 const urlRoutes = require('./routes/urlroutes');
 const {connectDB} = require('./helper/connectdb');
 const Url = require('./models/url');
-connectDB('mongodb://localhost:27017/urlshortener')
+connectDB('mongodb+srv://amarkounsal:amar2002@cluster0.tzrvj.mongodb.net/urlshort?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => console.log('Connected to DB'));
 app.use(express.json());
 app.use('/', urlRoutes);
