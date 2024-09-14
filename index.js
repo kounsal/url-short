@@ -8,6 +8,6 @@ connectDB('mongodb+srv://amarkounsal:amar2002@cluster0.tzrvj.mongodb.net/urlshor
 .then(() => console.log('Connected to DB'));
 app.use(express.json());
 app.use('/', urlRoutes);
-
+app.get('/',(res,req)=>{res.end("hekklos")});
 // app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
