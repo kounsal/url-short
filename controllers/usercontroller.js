@@ -22,10 +22,10 @@ async function handleSignIn(req,res) {
     }
     else 
     {
-        const sessionId = uuidv4();
-        setUser(sessionId,user);
-        res.cookie("uid", sessionId);
-        return res.status(200).json({msg:"Authenticated", uid : sessionId});   
+        // const sessionId = uuidv4();
+        const token = setUser(user);
+        res.cookie("uid", token);
+        return res.status(200).json({msg:"Authenticated", uid : token});   
     }
  }
 module.exports = {

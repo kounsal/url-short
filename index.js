@@ -7,8 +7,8 @@ const {connectDB} = require('./helper/connectdb');
 const {restrictToLoggedInUserOnly,authCheck} = require('./middleware/auth');
 const cookieParser = require("cookie-parser");
 const staticRoute = require('./routes/staticRoute')
-//mongodb+srv://amarkounsal:amar2002@cluster0.tzrvj.mongodb.net/urlshort?retryWrites=true&w=majority&appName=Cluster0
-connectDB("mongodb://localhost:27017/short-url")
+//
+connectDB("mongodb+srv://amarkounsal:amar2002@cluster0.tzrvj.mongodb.net/urlshort?retryWrites=true&w=majority&appName=Cluster0")
 .then(() => console.log('Connected to DB'))
 .catch((e)=>{console.log(e)});
 app.use(cookieParser());
