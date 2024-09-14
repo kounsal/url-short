@@ -39,9 +39,15 @@ if (!entry) {
      analatics: entry.vistHistory
     });
 }
+function handledefault(req,res){
+  res.json({msg:"hello"});
+
+
+}
 
 module.exports = {
     handleGenerateShortUrl,
     handleRedirect,
     handleStats,
+    handledefault
     };
