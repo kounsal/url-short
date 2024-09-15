@@ -6,13 +6,16 @@ const userRoute = require('./routes/userRoute');
 const {connectDB} = require('./helper/connectdb');
 const {restrictToLoggedInUserOnly,authCheck} = require('./middleware/auth');
 const cookieParser = require("cookie-parser");
-const staticRoute = require('./routes/staticRoute')
+const staticRoute = require('./routes/staticRoute');
+const cors = require('cors');
 //
 connectDB("mongodb+srv://amarkounsal:amar2002@cluster0.tzrvj.mongodb.net/urlshort?retryWrites=true&w=majority&appName=Cluster0")
 .then(() => console.log('Connected to DB'))
 .catch((e)=>{console.log(e)});
 app.use(cookieParser());
 app.use(express.json());
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 app.use('/url', restrictToLoggedInUserOnly, urlRoutes);
 app.use('/user',userRoute);
 app.use('/',authCheck,staticRoute);

@@ -3,8 +3,8 @@ const {handleGenerateShortUrl, handleRedirect, handleStats,handledefault} = requ
 const router = express.Router();
 
 router.post('/', handleGenerateShortUrl);
-router.get('/:shortid',handleRedirect);
+
 router.get('/stats/:shortid',handleStats);
-router.get('/', handledefault);
+// router.get('/', handledefault);
 
 module.exports = router;    

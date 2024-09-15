@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const { v4 : uuidv4 } = require('uuid');
+// const { v4 : uuidv4 } = require('uuid');
 const { setUser } = require('../helper/auth');
 
 async function handleSignUp(req,res) {
